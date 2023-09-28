@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        font-family: TT Norms, system-ui, sans-serif;
+        font-style: normal;
+    }
+
+    ::-webkit-scrollbar {
+        width: 0.75rem;
+        height: 0.75rem;
+    }
+    ::-webkit-scrollbar-button {
+        background: white;
+        width: 0;
+        height: 0;
+    }
+    ::-webkit-scrollbar-track-piece {
+        background: #fff;
+        border-radius: inherit;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #bcbeca;
+        border-radius: 8pt;
+        border: 4px solid rgba(0, 0, 0, 0);
+        background-clip: padding-box;
+    }
+
+    svg {
+        display: inline-block;
+    }
+
+    * {
+        direction: ltr;
+    }
+
+    *::placeholder {
+        transition: color 300ms;
+    }
+}
+
+@layer utilities {
+    .withoutScrollbar::-webkit-scrollbar{
+        display: none;
+    }
+
+    #draggable{
+        position: absolute;
+        pointer-events: none;
+    }
+
+    .leftScrollbar{
+        direction: rtl;
+    }
+
+    .transparentScrollbar::-webkit-scrollbar-track-piece {
+        background: transparent;
+    }
+
+    .withoutScrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .centered {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .inline-centered {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .absolute-fit {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .absolute-fit-empty:empty {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
